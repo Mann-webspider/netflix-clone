@@ -1,0 +1,55 @@
+.row_posters{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+    
+    
+}
+.row_posters::-webkit-scrollbar{
+    display: none;
+}
+
+.row_poster{
+    /* object-fit: contain; */
+    width: 100%;
+    /* max-height: 200px; */
+    
+    /* scroll-behavior: smooth; */
+    /* margin-right: 10px; */
+    /* transition: transform 450ms ; */
+
+}
+.row_poster{
+    object-fit: contain;
+    width: 20rem;
+    max-height: 200px;
+    
+    scroll-behavior: smooth;
+    margin-right: 10px;
+    transition: transform 450ms ;
+    filter: brightness(0.75);
+
+}
+.hmm{
+
+    position: relative;
+    
+   
+}
+
+.row_poster:hover{
+    transform: scale(1.1);
+}
+
+
+.row{
+    margin-left: 10px;
+    
+}
+.row_name{
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    padding: 1.2rem;
+}
