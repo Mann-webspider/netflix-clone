@@ -10,7 +10,7 @@ function Nav() {
   const logOut = () =>{
     const auth = getAuth(app);
     signOut(auth).then(()=>{
-      window.localStorage.removeItem("accessToken")
+      // window.localStorage.removeItem("accessToken")
       navigation("/signin")
     })
   }

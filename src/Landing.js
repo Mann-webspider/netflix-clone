@@ -7,20 +7,19 @@ import { GoogleAuthProvider ,getAuth, signInWithPopup,} from "firebase/auth";
 import app from "./firebase"
 function Landing() {
   const navigation = useNavigate();
-  useEffect(()=>{
-    if(window.localStorage.getItem("accessToken")){
-      navigation("/")
-    }
-  })
+  // useEffect(()=>{
+  //   if(window.localStorage.getItem("accessToken")){
+  //     navigation("/")
+  //   }
+  // })
   const provider = new GoogleAuthProvider();
   const auth = getAuth(app);
   const onClickCtaBtn = () =>{
-    if(!window.localStorage.getItem('accessToken')){
+    
 
-      signInWithPopup(auth,provider).then((res)=>{
-        const credential = GoogleAuthProvider.credentialFromResult(res);
-        const token = credential.accessToken;
-        window.localStorage.setItem("accessToken",token)
+    signInWithPopup(auth,provider).then((res)=>{
+      const credential = GoogleAuthProvider.credentialFromResult(res);
+       
       
     }).then(()=>{
       navigation('/');
@@ -29,7 +28,6 @@ function Landing() {
       console.log(err);
       
     })
-  }
     
 
   }
