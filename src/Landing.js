@@ -19,9 +19,9 @@ function Landing() {
 
     signInWithPopup(auth,provider).then((res)=>{
       const credential = GoogleAuthProvider.credentialFromResult(res);
-       
+      const token = credential.accessToken;
+      window.localStorage.setItem('accessToken',token);
       
-    }).then(()=>{
       navigation('/');
     }).catch((err)=>{
      

@@ -6,12 +6,10 @@ import requests from "./request";
 import { useNavigate } from "react-router-dom";
 function Home() {
   const navigation = useNavigate()
-  useEffect(()=>{
-    if(!window.localStorage.getItem("accessToken")){
-      navigation("/signin")
-    }
+  if(!window.localStorage.getItem("accessToken")){
 
-  },[])
+    navigation("/signin");
+  }
   
   return (
     <div>
