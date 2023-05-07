@@ -19,7 +19,7 @@ function Banner() {
     fetchData();
   }, []);
 
-  // console.log(movie);
+  
   return (
     <header
       className="banner"
@@ -39,7 +39,7 @@ function Banner() {
       </video> */}
       <div className="banner_container">
         {/* title */}
-        {/* {console.log(movie)} */}
+        
         <h1 className="banner_title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>

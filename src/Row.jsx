@@ -49,7 +49,9 @@ function Row({ title, fetchURL, isLargeRow }) {
       await search.get(wsa).then((res)=>{
 
       setDialogMovie(res.data);
-      setDialogMovieId(res.data.videos.results.find(vid => vid.name === "Official Trailer").key);
+      setDialogMovieId(res.data.videos.results[0].key)
+      setDialogMovieId(res.data.videos.results.find(vid => vid.type === "Trailer").key);
+      
     }).then(()=>{
       handleClickOpen()
     });
@@ -61,7 +63,7 @@ function Row({ title, fetchURL, isLargeRow }) {
     async function fetchData() {
       const request = await axios.get(fetchURL);
       setMovies(request.data.results);
-      // console.table(request.data.results);
+      
       return request;
     }
     fetchData();
@@ -85,7 +87,7 @@ function Row({ title, fetchURL, isLargeRow }) {
             }`}
             alt={`${movie.title}`}
             key={`${movie.id}`}
-            onClick={()=>{searchMovie(`${movie.id}`)}}
+            onClick={()=>{searchMovie(`${movie.id}`);}}
             onMouseOver={()=>{setShowTitle(true)}}
             onMouseLeave={()=>{setShowTitle(false)}}
             />
@@ -114,7 +116,7 @@ function Row({ title, fetchURL, isLargeRow }) {
           <h5>{dialogMovie.overview}</h5>
         </DialogContent>
         <DialogActions id="dialogAction">
-        
+        {/* <button>hello</button> */}
         </DialogActions>
       </Dialog>
       

@@ -20,16 +20,14 @@ function Landing() {
       signInWithPopup(auth,provider).then((res)=>{
         const credential = GoogleAuthProvider.credentialFromResult(res);
         const token = credential.accessToken;
-        // const user = res.user
-      window.localStorage.setItem("accessToken",token)
+        window.localStorage.setItem("accessToken",token)
       
     }).then(()=>{
       navigation('/');
     }).catch((err)=>{
-      // const errorCode = err.code;
-      // const errorMassage = err.massage;
+     
       console.log(err);
-      // console.log(errorMassage);
+      
     })
   }
     

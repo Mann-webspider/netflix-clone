@@ -34,8 +34,8 @@ function Home() {
       />
       <Row title="Romance" fetchURL={requests.fetchRomanceMovies} isLargeRow />
        <Row title="Horror" fetchURL={requests.fetchHorroMovies} isLargeRow />
-       <dialog data-open><div>this is model</div></dialog>
-       <button onClick={()=>{console.log("hello");}}>open</button>
+       
+       
     </div>
   );
 }
