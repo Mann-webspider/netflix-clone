@@ -7,10 +7,11 @@ const instance = axios.create({
         append_to_response:"videos",
         language:"en-US"
     },
-    headers: {'X-Requested-With': 'XMLHttpRequest',
-            "X-Content-Type-Options":"nosniff",
-        "Content-Security-Policy": "frame-ancestors https://youtube.com",
-    "X-Frame-Options":"DENY"},
+    // headers: {'X-Requested-With': 'XMLHttpRequest',
+    //         "X-Content-Type-Options":"nosniff",
+    //     "Content-Security-Policy": "defaut-src 'self';",
+        
+    // },
 })
 export default instance
 

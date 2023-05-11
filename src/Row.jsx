@@ -62,7 +62,7 @@ function Row({ title, fetchURL, isLargeRow }) {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchURL);
-      setMovies(request.data.results);
+      setMovies(request.data.results);  
       
       return request;
     }
@@ -109,14 +109,14 @@ function Row({ title, fetchURL, isLargeRow }) {
       >
         <DialogTitle id="responsive-dialog-title" onClose={handleClose}>
           {/* <YouTube videoId={dialogMovieId} onReady={onReady} opts={opts} className="youtube"/> */}
-          <iframe src={`https://www.youtube.com/embed/${dialogMovieId}?autoplay=1&loop=1&controls=0&fs=0&cc_load_policy=1&modestbranding=1`} frameborder="0" className="youtube" title="p" ></iframe>
+          <iframe src={`https://www.youtube.com/embed/${dialogMovieId}?autoplay=1?controls=0`} frameborder="0" className="youtube" title="p" ></iframe>
         </DialogTitle>
-        <DialogContent dividers={scroll === 'body'} id="dialogContent">
+        <DialogContent dividers={scroll === 'body'} id="dialogContent" onClick={handleClose}>
           <h2>{dialogMovie.title}</h2>
           <h5>{dialogMovie.overview}</h5>
         </DialogContent>
         <DialogActions id="dialogAction">
-        {/* <button>hello</button> */}
+        <button onClick={handleClose}>close</button>
         </DialogActions>
       </Dialog>
       
